@@ -1,6 +1,8 @@
 const { app, BaseWindow, WebContentsView, autoUpdater } = require('electron');
 const path = require('path');
-const { updateElectronApp, UpdateSourceType } = require('update-electron-app')
+const { updateElectronApp } = require('update-electron-app');
+
+updateElectronApp();
 
 if(require('electron-squirrel-startup')) app.quit();
 
@@ -19,14 +21,6 @@ function createWindow() {
     })
     mainWindow.setMenuBarVisibility(false);
     mainWindow.setAutoHideMenuBar(false);
-
-    const server = 'https://update.electronjs.org'
-    const feed = {url: `${server}/OWNER/REPO/${process.platform}-${process.arch}/${app.getVersion()}`}
-    autoUpdater.setFeedURL(feed)
-
-    setInterval(() => {
-        autoUpdater.checkForUpdates()
-    }, 10 * 60 * 1000)
 
     const webView = new WebContentsView();
     webView.webContents.loadURL('https://dev.negoview.com/provera5Mx/');
@@ -51,13 +45,6 @@ function createWindow() {
 
 // Electron app lifecycle hooks
 app.whenReady().then(() => {
-    updateElectronApp({
-        updateSource: {
-            type: UpdateSourceType.StaticStorage,
-            baseUrl: `https://my-bucket.s3.amazonaws.com/my-app-updates/${process.platform}/${process.arch}`
-        },
-        updateInterval: '1 hour',
-    })
     createWindow();
     app.on('activate', function () {
         if (BaseWindow.getAllWindows().length === 0) createWindow();
