@@ -1,7 +1,9 @@
 const { app, BaseWindow, WebContentsView } = require('electron');
 const path = require('path');
 const { updateElectronApp } = require('update-electron-app');
-updateElectronApp();
+updateElectronApp({
+    logger: require('electron-log')
+});
 
 function createWindow() {
     const mainWindow = new BaseWindow({
