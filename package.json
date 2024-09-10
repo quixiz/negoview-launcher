@@ -1,6 +1,6 @@
 {
   "name": "Negoview",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Quixiz",
   "description": "A desktop application for the Negoview project",
   "main": "main.js",
@@ -8,7 +8,7 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "make-mac": "electron-forge make --targets=@electron-forge/maker-zip"
+    "publish": "electron-forge publish"
   },
   "config": {
     "forge": {
@@ -36,7 +36,18 @@
           "config": {}
         }
       ],
-      "publishers": []
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "MaximeQuixiz",
+              "name": "negoview-launcher"
+            },
+            "prerelease": false
+          }
+        }
+      ]
     }
   },
   "repository": "https://github.com/electron/electron-quick-start",
