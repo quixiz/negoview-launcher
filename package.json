@@ -1,6 +1,6 @@
 {
     "name": "Negoview",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "author": "Quixiz",
     "description": "A desktop application for the Negoview project",
     "main": "main.js",

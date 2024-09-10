@@ -1,6 +1,9 @@
+if(require('electron-squirrel-startup')) return;
+
 const { app, BaseWindow, WebContentsView } = require('electron');
 const path = require('path');
 const { updateElectronApp } = require('update-electron-app');
+
 updateElectronApp({
     logger: require('electron-log')
 });
