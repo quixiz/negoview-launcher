@@ -1,6 +1,6 @@
 {
-  "name": "Negoview Launcher",
-  "version": "1.0.3",
+  "name": "negoview-launcher",
+  "version": "1.0.4",
   "author": "Quixiz",
   "description": "A desktop application for the Negoview project",
   "main": "main.js",
@@ -75,6 +75,7 @@
   },
   "dependencies": {
     "electron-is-dev": "^3.0.1",
+    "electron-log": "^5.2.0",
     "electron-squirrel-startup": "^1.0.1",
     "update-electron-app": "^3.0.0"
   }

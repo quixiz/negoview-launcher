@@ -1,8 +1,15 @@
 const { app, BaseWindow, WebContentsView, ipcMain } = require('electron');
 const path = require('path');
-const { updateElectronApp } = require('update-electron-app');
+const { updateElectronApp, UpdateSourceType} = require('update-electron-app');
 
-updateElectronApp();
+updateElectronApp({
+    updateSource: {
+        type: UpdateSourceType.ElectronPublicUpdateService,
+        repo: 'MaximeQuixiz/negoview-launcher'
+    },
+    updateInterval: '1 hour',
+    logger: require('electron-log')
+})
 
 if(require('electron-squirrel-startup')) app.quit();
 
