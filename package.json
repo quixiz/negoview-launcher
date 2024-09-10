@@ -1,80 +1,80 @@
 {
-  "name": "Negoview",
-  "version": "1.0.0",
-  "author": "Quixiz",
-  "description": "A desktop application for the Negoview project",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish"
-  },
-  "config": {
-    "forge": {
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
-          "config": {}
+    "name": "Negoview",
+    "version": "2.0.0",
+    "author": "Quixiz",
+    "description": "A desktop application for the Negoview project",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish"
+    },
+    "config": {
+        "forge": {
+            "makers": [
+                {
+                    "name": "@electron-forge/maker-squirrel",
+                    "config": {}
+                },
+                {
+                    "name": "@electron-forge/maker-zip",
+                    "platforms": [
+                        "darwin"
+                    ]
+                },
+                {
+                    "name": "@electron-forge/maker-deb",
+                    "config": {}
+                },
+                {
+                    "name": "@electron-forge/maker-rpm",
+                    "config": {}
+                },
+                {
+                    "name": "@electron-forge/maker-dmg",
+                    "config": {}
+                }
+            ],
+            "publishers": [
+                {
+                    "name": "@electron-forge/publisher-github",
+                    "config": {
+                        "repository": {
+                            "owner": "MaximeQuixiz",
+                            "name": "negoview-launcher"
+                        },
+                        "prerelease": false,
+                        "draft": false
+                    }
+                }
+            ]
         }
-      ],
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "MaximeQuixiz",
-              "name": "negoview-launcher"
-            },
-            "prerelease": false,
-            "draft": false
-          }
-        }
-      ]
+    },
+    "repository": "https://github.com/MaximeQuixiz/negoview-launcher",
+    "keywords": [
+        "negoview",
+        "launcher",
+        "electron"
+    ],
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "@electron-forge/cli": "^7.4.0",
+        "@electron-forge/maker-deb": "^7.4.0",
+        "@electron-forge/maker-dmg": "^7.4.0",
+        "@electron-forge/maker-rpm": "^7.4.0",
+        "@electron-forge/maker-squirrel": "^7.4.0",
+        "@electron-forge/maker-zip": "^7.4.0",
+        "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+        "@electron-forge/plugin-fuses": "^7.4.0",
+        "@electron-forge/publisher-github": "^7.4.0",
+        "@electron/fuses": "^1.8.0",
+        "electron": "^32.0.1"
+    },
+    "dependencies": {
+        "electron-is-dev": "^3.0.1",
+        "electron-log": "^5.2.0",
+        "electron-squirrel-startup": "^1.0.1",
+        "update-electron-app": "^3.0.0"
     }
-  },
-  "repository": "https://github.com/MaximeQuixiz/negoview-launcher",
-  "keywords": [
-    "negoview",
-    "launcher",
-    "electron"
-  ],
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "@electron-forge/cli": "^7.4.0",
-    "@electron-forge/maker-deb": "^7.4.0",
-    "@electron-forge/maker-dmg": "^7.4.0",
-    "@electron-forge/maker-rpm": "^7.4.0",
-    "@electron-forge/maker-squirrel": "^7.4.0",
-    "@electron-forge/maker-zip": "^7.4.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
-    "@electron-forge/plugin-fuses": "^7.4.0",
-    "@electron-forge/publisher-github": "^7.4.0",
-    "@electron/fuses": "^1.8.0",
-    "electron": "^32.0.1"
-  },
-  "dependencies": {
-    "electron-is-dev": "^3.0.1",
-    "electron-log": "^5.2.0",
-    "electron-squirrel-startup": "^1.0.1",
-    "update-electron-app": "^3.0.0"
-  }
 }

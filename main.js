@@ -1,34 +1,7 @@
-const { app, BaseWindow, WebContentsView, autoUpdater } = require('electron');
+const { app, BaseWindow, WebContentsView } = require('electron');
 const path = require('path');
-const { version } = require("./package");
-const log = require('electron-log');
-log.transports.file.level = 'info';
-log.transports.file.file = __dirname + 'log.log';
-
-if(require('electron-squirrel-startup')) return;
-
-log.info(`Current version: ${version}`);
-
-const server = 'https://update.electronjs.org'
-const feed = {url: `${server}/MaximeQuixiz/negoview-launcher/${app.getVersion()}`}
-autoUpdater.setFeedURL(feed);
-autoUpdater.checkForUpdates();
-
-autoUpdater.on("checking-for-update", () => {
-    log.info('checking-for-update');
-});
-
-autoUpdater.on("update-available", () => {
-    log.info("update-available");
-});
-
-autoUpdater.on("update-not-available", () => {
-    log.info("update-not-available");
-});
-
-autoUpdater.on("error", (error) => {
-    log.info("error", { error });
-});
+const { updateElectronApp } = require('update-electron-app');
+updateElectronApp();
 
 function createWindow() {
     const mainWindow = new BaseWindow({
@@ -43,7 +16,7 @@ function createWindow() {
         show: false,
         alwaysOnTop: false,
     })
-    mainWindow.setMenuBarVisibility(false);
+    mainWindow.setMenuBarVisibility(true);
     mainWindow.setAutoHideMenuBar(false);
 
     const webView = new WebContentsView();
