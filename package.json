@@ -1,6 +1,6 @@
 {
-  "name": "negoview-launcher",
-  "version": "1.0.4",
+  "name": "Negoview",
+  "version": "1.0.0",
   "author": "Quixiz",
   "description": "A desktop application for the Negoview project",
   "main": "main.js",
@@ -51,13 +51,11 @@
       ]
     }
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/MaximeQuixiz/negoview-launcher",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "negoview",
+    "launcher",
+    "electron"
   ],
   "license": "CC0-1.0",
   "devDependencies": {

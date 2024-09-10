@@ -1,17 +1,12 @@
-const { app, BaseWindow, WebContentsView, ipcMain } = require('electron');
+const { app, BaseWindow, WebContentsView, autoUpdater } = require('electron');
 const path = require('path');
-const { updateElectronApp, UpdateSourceType} = require('update-electron-app');
 
-updateElectronApp({
-    updateSource: {
-        type: UpdateSourceType.ElectronPublicUpdateService,
-        repo: 'MaximeQuixiz/negoview-launcher'
-    },
-    updateInterval: '1 hour',
-    logger: require('electron-log')
-})
+if(require('electron-squirrel-startup')) return;
 
-if(require('electron-squirrel-startup')) app.quit();
+const server = 'https://update.electronjs.org'
+const feed = {url: `${server}/MaximeQuixiz/negoview-launcher/${app.getVersion()}`}
+autoUpdater.setFeedURL(feed);
+autoUpdater.checkForUpdates();
 
 function createWindow() {
     const mainWindow = new BaseWindow({
@@ -22,10 +17,9 @@ function createWindow() {
             devTools: false,
             nodeIntegration: false,
             contextIsolation: true,
-            title: 'Negoview Launcher',
         },
         show: false,
-        alwaysOnTop: true,
+        alwaysOnTop: false,
     })
     mainWindow.setMenuBarVisibility(false);
     mainWindow.setAutoHideMenuBar(false);
