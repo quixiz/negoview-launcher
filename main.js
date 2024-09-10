@@ -16,7 +16,7 @@ function createWindow() {
         show: false,
         alwaysOnTop: false,
     })
-    mainWindow.setMenuBarVisibility(true);
+    mainWindow.setMenuBarVisibility(false);
     mainWindow.setAutoHideMenuBar(false);
 
     const webView = new WebContentsView();
