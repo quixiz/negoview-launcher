@@ -25,7 +25,7 @@ function createWindow() {
     mainWindow.setAutoHideMenuBar(false);
 
     const webView = new WebContentsView();
-    webView.webContents.loadURL('https://www.google.com');
+    webView.webContents.loadURL('https://dev.negoview.com/provera5Mx/');
     mainWindow.contentView.addChildView(webView);
     webView.setBounds({ x: 0, y: 0, width: 0, height: 0 });
     mainWindow.on('resize', () => {
