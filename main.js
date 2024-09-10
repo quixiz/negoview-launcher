@@ -1,4 +1,4 @@
-const { app, BaseWindow, WebContentsView, autoUpdater } = require('electron');
+const { app, BaseWindow, WebContentsView, ipcMain } = require('electron');
 const path = require('path');
 const { updateElectronApp } = require('update-electron-app');
 
@@ -8,7 +8,7 @@ if(require('electron-squirrel-startup')) app.quit();
 
 function createWindow() {
     const mainWindow = new BaseWindow({
-        width: 1200,
+        width: 500,
         height: 700,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
