@@ -8,13 +8,14 @@ if(require('electron-squirrel-startup')) app.quit();
 
 function createWindow() {
     const mainWindow = new BaseWindow({
-        width: 500,
+        width: 1200,
         height: 700,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             devTools: false,
             nodeIntegration: false,
             contextIsolation: true,
+            title: 'Negoview Launcher',
         },
         show: false,
         alwaysOnTop: true,

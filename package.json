@@ -1,6 +1,6 @@
 {
-  "name": "Negoview",
-  "version": "1.0.2",
+  "name": "Negoview Launcher",
+  "version": "1.0.3",
   "author": "Quixiz",
   "description": "A desktop application for the Negoview project",
   "main": "main.js",
@@ -44,7 +44,8 @@
               "owner": "MaximeQuixiz",
               "name": "negoview-launcher"
             },
-            "prerelease": false
+            "prerelease": false,
+            "draft": false
           }
         }
       ]
