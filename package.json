@@ -1,6 +1,6 @@
 {
     "name": "Negoview",
-    "version": "1.5.0",
+    "version": "1.7.0",
     "author": "Quixiz",
     "description": "A desktop application for the Negoview project",
     "main": "main.js",
@@ -12,11 +12,17 @@
     },
     "config": {
         "forge": {
+            "packagerConfig": {
+                "asar": true,
+                "icon": "./assets/app"
+            },
             "makers": [
                 {
                     "name": "@electron-forge/maker-squirrel",
                     "config": {
                         "exe": "Negoview.exe",
+                        "icon": "./assets/app.ico",
+                        "setupIcon": "./assets/setup.ico",
                         "setupExe": "NegoviewSetup.exe"
                     }
                 },

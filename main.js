@@ -21,6 +21,7 @@ function createWindow() {
         show: false,
         alwaysOnTop: false,
     })
+    mainWindow.setIcon(path.join(__dirname, '/assets/app.ico'));
     mainWindow.setMenuBarVisibility(false);
     mainWindow.setAutoHideMenuBar(false);
 
