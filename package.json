@@ -1,6 +1,6 @@
 {
     "name": "Negoview",
-    "version": "1.7.0",
+    "version": "1.0.0",
     "author": "Quixiz",
     "description": "A desktop application for the Negoview project",
     "main": "main.js",
@@ -60,7 +60,7 @@
             ]
         }
     },
-    "repository": "https://github.com/MaximeQuixiz/negoview-launcher",
+    "repository": "https://github.com/quixiz/negoview-launcher",
     "keywords": [
         "negoview",
         "launcher",
