@@ -1,6 +1,6 @@
 {
     "name": "Negoview",
-    "version": "1.0.0",
+    "version": "1.9.0",
     "author": "Quixiz",
     "description": "A desktop application for the Negoview project",
     "main": "main.js",
@@ -50,7 +50,7 @@
                     "name": "@electron-forge/publisher-github",
                     "config": {
                         "repository": {
-                            "owner": "MaximeQuixiz",
+                            "owner": "quixiz",
                             "name": "negoview-launcher"
                         },
                         "prerelease": false,
